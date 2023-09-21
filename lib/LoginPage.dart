@@ -2,39 +2,7 @@ import 'package:flutter/material.dart';
 
  
 
-class LoginPage extends StatefulWidget {
-
-  @override
-
-  _LoginPageState createState() => _LoginPageState();
-
-}
-
- 
-
-class _LoginPageState extends State<LoginPage> {
-
-  final _formKey = GlobalKey<FormState>();
-  String username = '';
-  String password = '';
-
- 
-
-  void _login() async {
-
-    if (_formKey.currentState!.validate()) {
-
-      // TODO: Implement login logic here
-
-      // For example, you could make a network request to authenticate the user
-
-      // and then navigate to the home page if the login is successful.
-
-    }
-
-  }
-
- 
+class LoginRegisterPage extends StatelessWidget {
 
   @override
 
@@ -48,87 +16,104 @@ class _LoginPageState extends State<LoginPage> {
 
       ),
 
-      body: Form(
+      body: LoginForm(),
+
+    );
+
+  }
+
+}
+
+ 
+
+class LoginForm extends StatefulWidget {
+
+  @override
+
+  _LoginFormState createState() => _LoginFormState();
+
+}
+
+ 
+
+class _LoginFormState extends State<LoginForm> {
+
+  final _formKey = GlobalKey<FormState>();
+
+ 
+
+  TextEditingController _usernameController = TextEditingController();
+
+  TextEditingController _passwordController = TextEditingController();
+
+ 
+
+  @override
+
+  Widget build(BuildContext context) {
+
+    return Padding(
+
+      padding: EdgeInsets.all(16.0),
+
+      child: Form(
 
         key: _formKey,
 
         child: Column(
 
-mainAxisAlignment: MainAxisAlignment.center,
-
-          children: [
+          children: <Widget>[
 
             TextFormField(
 
-              decoration: InputDecoration(
+              controller: _usernameController,
 
-                labelText: 'Username',
-
-              ),
-
-              validator: (value) {
-
-                if (value == null || value.isEmpty) {
-
-                  return 'Please enter a username.';
-
-                }
-
-                return null;
-
-              },
-
-              onChanged: (value) {
-
-                setState(() {
-
-                  username = value;
-
-                });
-
-              },
+              decoration: InputDecoration(labelText: 'Username'),
 
             ),
 
             TextFormField(
 
-              decoration: InputDecoration(
-
-                labelText: 'Password',
-
-              ),
+              controller: _passwordController,
 
               obscureText: true,
 
-              validator: (value) {
+              decoration: InputDecoration(labelText: 'Password'),
 
-                if (value == null || value.isEmpty) {
-
-                  return 'Please enter a password.';
-
-                }
-
-                return null;
-
-              },
-
-              onChanged: (value) {
-
-                setState(() {
-
-                  password = value;
-
-                });
-
-              },
 
             ),
 
             ElevatedButton(
 
-              onPressed: _login,
+              onPressed: () {
+
+              {
+
+                  // Perform login logic here
+
+                  String username = _usernameController.text;
+
+                  String password = _passwordController.text;
+
+                  // Add your authentication code here
+
+                }
+
+              },
 
               child: Text('Login'),
+
+            ),
+
+            TextButton(
+
+              onPressed: () {
+
+                Navigator.pushNamed(context, '/register');
+
+              },
+
+              child: Text('Register'),
 
             ),
 
