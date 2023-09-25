@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'profile.dart';
 
  
 
@@ -146,8 +147,20 @@ class _RegisterFormState extends State<RegisterForm> {
               },
 
               child: Text('Register'),
-
             ),
+              ElevatedButton(
+                onPressed: () {
+                  // Add functionality to upload profile picture
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ImageUploadPage(),
+                    ),
+                  );
+                },
+                child: Text('Upload Profile Picture'),
+              ),
+
 
           ],
 
