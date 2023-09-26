@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
- 
 
 class LoginRegisterPage extends StatelessWidget {
 
@@ -24,8 +23,6 @@ class LoginRegisterPage extends StatelessWidget {
 
 }
 
- 
-
 class LoginForm extends StatefulWidget {
 
   @override
@@ -34,19 +31,13 @@ class LoginForm extends StatefulWidget {
 
 }
 
- 
-
 class _LoginFormState extends State<LoginForm> {
 
   final _formKey = GlobalKey<FormState>();
 
- 
-
   TextEditingController _usernameController = TextEditingController();
 
   TextEditingController _passwordController = TextEditingController();
-
- 
 
   @override
 

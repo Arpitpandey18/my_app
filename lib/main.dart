@@ -4,11 +4,7 @@ import 'LoginPage.dart';
 
 import 'register.dart';
 
- 
-
 void main() => runApp(MyApp());
-
- 
 
 class MyApp extends StatelessWidget {
 

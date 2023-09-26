@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'profile.dart';
 
- 
-
 class RegisterPage extends StatelessWidget {
 
   @override
@@ -25,8 +23,6 @@ class RegisterPage extends StatelessWidget {
 
 }
 
- 
-
 class RegisterForm extends StatefulWidget {
 
   @override
@@ -35,13 +31,9 @@ class RegisterForm extends StatefulWidget {
 
 }
 
- 
-
 class _RegisterFormState extends State<RegisterForm> {
 
   final _formKey = GlobalKey<FormState>();
-
- 
 
   TextEditingController _usernameController = TextEditingController();
 
@@ -53,7 +45,6 @@ class _RegisterFormState extends State<RegisterForm> {
 
   TextEditingController _lastNameController = TextEditingController();
 
- 
 
   @override
 
@@ -77,7 +68,7 @@ class _RegisterFormState extends State<RegisterForm> {
 
               decoration: InputDecoration(labelText: 'Username'),
 
-             
+
 
             ),
 
